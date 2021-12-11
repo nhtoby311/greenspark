@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import CheckBox from "../CheckBox/CheckBox"
+import CheckBoxColor from "../CheckBoxColor/CheckBoxColor"
 import Logo from "../Logo/Logo"
 
 const Box = styled.div`
@@ -37,6 +38,7 @@ const NumText = styled.h3`
 const ContTools = styled.div`
     display:flex;
     flex-direction: column;
+    gap: 10px;
 `
 const ToolsRow = styled.div`
     display : flex;
@@ -45,6 +47,11 @@ const ToolsRow = styled.div`
 const ToolsText = styled.p`
     font-size: 14px;
     color: #3B755F;
+`
+
+const Tools = styled.div`
+    display: flex;
+    gap: 4px;
 `
 
 export default function Card(){
@@ -61,24 +68,25 @@ export default function Card(){
             <ContTools>
                 <ToolsRow>
                     <ToolsText>Link to Public Profile</ToolsText>
-                    <div>
+                    <Tools>
                         <CheckBox></CheckBox>
-                    </div>
+                    </Tools>
                 </ToolsRow>
                 <ToolsRow>
                     <ToolsText>Badge colour</ToolsText>
-                    <div>
-                        <input type="checkbox" />
-                        <input type="checkbox" />
-                        <input type="checkbox" />
-                        <input type="checkbox" />
-                    </div>
+                    <Tools>
+                        <CheckBoxColor bgColor="#2E3A8C"/>
+                        <CheckBoxColor bgColor="#3B755F"/>
+                        <CheckBoxColor bgColor="#F2EBDB"/>
+                        <CheckBoxColor bgColor="#FFFFFF"/>
+                        <CheckBoxColor bgColor="#212121"/>
+                    </Tools>
                 </ToolsRow>
                 <ToolsRow>
                     <ToolsText>Activate badge</ToolsText>
-                    <div>
+                    <Tools>
                         <input type="checkbox" />
-                    </div>
+                    </Tools>
                 </ToolsRow>
             </ContTools>
 
