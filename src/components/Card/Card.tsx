@@ -3,36 +3,37 @@ import CheckBox from "../CheckBox/CheckBox"
 import CheckBoxColor from "../CheckBoxColor/CheckBoxColor"
 import CheckBoxSwitch from "../CheckBoxSwitch/CheckBoxSwitch"
 import Logo from "../Logo/Logo"
+import { API } from "../../types/API"
 
 const Box = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
 `
-const TileBar = styled.div`
+const TileBar = styled.div<PropsTileBar>`
     display: flex;
     align-items: center;
-    background: #2E3A8C;
+    background: ${(props) => props.background};
     border-radius: 5.95489px;
     padding: 15px 15px;
     gap: 20px;
 `
 
-const TextBar = styled.div`
+const TextBar = styled.div<PropsTitleBar>`
     display: flex;
     flex-direction: column;
     gap: 5px;
-
+    color: ${(props) => props.textColor === null ? "#F9F9F9" : props.textColor}
 `
 
 const FixedText = styled.p`
     font-size: 12.406px;
-    color: #F9F9F9;
+    //color: #F9F9F9;
 `
 
 const NumText = styled.h3`
     font-size: 17.8647px;
-    color: #F9F9F9;
+    //color: #F9F9F9;
     font-weight: bold;
 `
 
@@ -55,14 +56,27 @@ const Tools = styled.div`
     gap: 4px;
 `
 
-export default function Card(){
+type Props = {
+    data : API | undefined
+}
+
+type PropsTileBar = {
+    background: string | undefined
+}
+
+type PropsTitleBar = {
+    textColor: string | undefined | null
+}
+
+export default function Card(props : Props){
+    console.log(props.data)
     return (
         <Box>
-            <TileBar>
-                <Logo/>
-                <TextBar>
+            <TileBar background={props.data?.background}>
+                <Logo textColor={props.data?.textColor}/>
+                <TextBar textColor={props.data?.textColor}>
                     <FixedText>This product collects</FixedText>
-                    <NumText>100 plastic bottles</NumText>
+                    <NumText>{props.data?.amount} {props.data?.type}</NumText>
                 </TextBar>
             </TileBar>
             
