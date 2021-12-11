@@ -23,7 +23,7 @@ const TextBar = styled.div<PropsTitleBar>`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    color: ${(props) => props.textColor === null ? "#F9F9F9" : props.textColor}
+    color: ${(props) => props.textColor === null ? "#F9F9F9" : props.textColor};
 `
 
 const FixedText = styled.p`
@@ -70,13 +70,14 @@ type PropsTitleBar = {
 
 export default function Card(props : Props){
     console.log(props.data)
+    const carbonCaseTxt = props.data?.type === "carbon" ? "kgs of " : ""
     return (
         <Box>
             <TileBar background={props.data?.background}>
                 <Logo textColor={props.data?.textColor}/>
                 <TextBar textColor={props.data?.textColor}>
                     <FixedText>This product collects</FixedText>
-                    <NumText>{props.data?.amount} {props.data?.type}</NumText>
+                    <NumText>{props.data?.amount} {carbonCaseTxt} {props.data?.type}</NumText>
                 </TextBar>
             </TileBar>
             

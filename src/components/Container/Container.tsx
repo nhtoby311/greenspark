@@ -1,9 +1,8 @@
 import styled from "styled-components"
 
 const Cont = styled.div`
-    width: 85%;
-    height: 80%;
 
+    min-height: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
