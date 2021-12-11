@@ -1,9 +1,11 @@
 import styled from "styled-components"
+import CheckBox from "../CheckBox/CheckBox"
 import Logo from "../Logo/Logo"
 
 const Box = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 15px;
 `
 const TileBar = styled.div`
     display: flex;
@@ -60,7 +62,7 @@ export default function Card(){
                 <ToolsRow>
                     <ToolsText>Link to Public Profile</ToolsText>
                     <div>
-                        <input type="checkbox" />
+                        <CheckBox></CheckBox>
                     </div>
                 </ToolsRow>
                 <ToolsRow>

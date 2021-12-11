@@ -12,6 +12,11 @@ const Wrapper = styled.div`
     height: 100vh;
 `
 
+const CardCont = styled.div`
+    display: flex;
+    margin-top : 25px; 
+`
+
 
 export default function Home(){
     const { loading, error, value } = useFetch(
@@ -23,7 +28,9 @@ export default function Home(){
     return (
         <Wrapper>
             <Container>
-                <Card></Card>
+                <CardCont>
+                    <Card></Card>
+                </CardCont>
             </Container>
         </Wrapper>  
     )
