@@ -7,14 +7,17 @@ const Box = styled.div`
 `
 const TileBar = styled.div`
     display: flex;
-    
+    align-items: center;
     background: #2E3A8C;
     border-radius: 5.95489px;
+    padding: 15px 15px;
+    gap: 20px;
 `
 
 const TextBar = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 5px;
 
 `
 
@@ -32,7 +35,14 @@ const NumText = styled.h3`
 const ContTools = styled.div`
     display:flex;
     flex-direction: column;
-    
+`
+const ToolsRow = styled.div`
+    display : flex;
+    justify-content: space-between;
+`
+const ToolsText = styled.p`
+    font-size: 14px;
+    color: #3B755F;
 `
 
 export default function Card(){
@@ -45,7 +55,30 @@ export default function Card(){
                     <NumText>100 plastic bottles</NumText>
                 </TextBar>
             </TileBar>
-
+            
+            <ContTools>
+                <ToolsRow>
+                    <ToolsText>Link to Public Profile</ToolsText>
+                    <div>
+                        <input type="checkbox" />
+                    </div>
+                </ToolsRow>
+                <ToolsRow>
+                    <ToolsText>Badge colour</ToolsText>
+                    <div>
+                        <input type="checkbox" />
+                        <input type="checkbox" />
+                        <input type="checkbox" />
+                        <input type="checkbox" />
+                    </div>
+                </ToolsRow>
+                <ToolsRow>
+                    <ToolsText>Activate badge</ToolsText>
+                    <div>
+                        <input type="checkbox" />
+                    </div>
+                </ToolsRow>
+            </ContTools>
 
         </Box>
     )
