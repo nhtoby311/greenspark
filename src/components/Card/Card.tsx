@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import CheckBox from "../CheckBox/CheckBox"
 import CheckBoxColor from "../CheckBoxColor/CheckBoxColor"
+import CheckBoxSwitch from "../CheckBoxSwitch/CheckBoxSwitch"
 import Logo from "../Logo/Logo"
 
 const Box = styled.div`
@@ -85,7 +86,7 @@ export default function Card(){
                 <ToolsRow>
                     <ToolsText>Activate badge</ToolsText>
                     <Tools>
-                        <input type="checkbox" />
+                        <CheckBoxSwitch/>
                     </Tools>
                 </ToolsRow>
             </ContTools>
