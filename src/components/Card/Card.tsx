@@ -5,6 +5,7 @@ import CheckBoxSwitch from "../CheckBoxSwitch/CheckBoxSwitch"
 import Logo from "../Logo/Logo"
 import { API } from "../../types/API"
 import Tooltips from "../Tooltips/Tooltips"
+import { useState } from "react"
 
 const Box = styled.div`
     display: flex;
@@ -70,13 +71,26 @@ type PropsTitleBar = {
 }
 
 export default function Card(props : Props){
+
+    const [badgeBgColor,setBadgeBgColor] = useState(props.data?.background)
+    const [badgeTxtColor,setBadgeTxtColor] = useState(props.data?.textColor)
+
+    const badgeBgColorArr = ['#2E3A8C','#3B755F','#F2EBDB','#FFFFFF','#212121']
+    const badgeTxtColorArr = [null,null,'#3B755F','#3B755F',null]
+
     //console.log(props.data)
     const carbonCaseTxt = props.data?.type === "carbon" ? "kgs of " : ""
+
+    const BadgeColorOnClickHandle = (e:string, ind:number) => {
+        setBadgeBgColor(e)
+        setBadgeTxtColor(badgeTxtColorArr[ind])
+    }
+
     return (
         <Box>
-            <TileBar background={props.data?.background}>
-                <Logo textColor={props.data?.textColor}/>
-                <TextBar textColor={props.data?.textColor}>
+            <TileBar background={badgeBgColor}>
+                <Logo textColor={badgeTxtColor}/>
+                <TextBar textColor={badgeTxtColor}>
                     <FixedText>This product collects</FixedText>
                     <NumText>{props.data?.amount} {carbonCaseTxt} {props.data?.type}</NumText>
                 </TextBar>
@@ -95,11 +109,7 @@ export default function Card(props : Props){
                 <ToolsRow>
                     <ToolsText>Badge colour</ToolsText>
                     <Tools>
-                        <CheckBoxColor bgColor="#2E3A8C"/>
-                        <CheckBoxColor bgColor="#3B755F"/>
-                        <CheckBoxColor bgColor="#F2EBDB"/>
-                        <CheckBoxColor bgColor="#FFFFFF"/>
-                        <CheckBoxColor bgColor="#212121"/>
+                        {badgeBgColorArr.map((e,ind) => <CheckBoxColor active={e === badgeBgColor ? true : false} onClick={()=>{BadgeColorOnClickHandle(e,ind)}} key={ind.toString()} bgColor={e}/>)}
                     </Tools>
                 </ToolsRow>
                 <ToolsRow>

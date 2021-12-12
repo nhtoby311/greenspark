@@ -64,13 +64,17 @@ const ShadowBox = styled.div`
 
 type Props = {
     bgColor: string;
+    onClick?: ()=>void;
+    active?: boolean;
 };
 
 export default function CheckBoxColor(props: Props){
+    console.log(props.active)
+    const checkedVal = props.active ? true : false
     return (
-        <Cont >
+        <Cont onClick={props.onClick}>
             <ShadowBox></ShadowBox>
-            <InputBox className="input-checkbox-color" bgColor={props.bgColor} type="checkbox"></InputBox>
+            <InputBox checked={checkedVal} className="input-checkbox-color" bgColor={props.bgColor} type="checkbox"></InputBox>
         </Cont>
     )
 }
