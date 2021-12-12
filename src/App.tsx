@@ -4,16 +4,17 @@ import styled from 'styled-components';
 import GlobalStyle from './styles/style';
 import { Routes, Route, Link } from "react-router-dom";
 
-
 function App() {
   
   return (
     <>
       <GlobalStyle/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<>404</>} />
-      </Routes>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<>404</>} />
+        </Routes>
+      
     </>
   );
 }

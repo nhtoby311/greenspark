@@ -69,12 +69,12 @@ type Props = {
 };
 
 export default function CheckBoxColor(props: Props){
-    console.log(props.active)
+    //console.log(props.active)
     const checkedVal = props.active ? true : false
     return (
         <Cont onClick={props.onClick}>
             <ShadowBox></ShadowBox>
-            <InputBox checked={checkedVal} className="input-checkbox-color" bgColor={props.bgColor} type="checkbox"></InputBox>
+            <InputBox onChange={()=>{}} checked={checkedVal} className="input-checkbox-color" bgColor={props.bgColor} type="checkbox"></InputBox>
         </Cont>
     )
 }

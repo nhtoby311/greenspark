@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Container from "../components/Container/Container"
 import Card from "../components/Card/Card"
 import { API } from "../types/API"
+import Loading from "../components/Loading/Loading"
 
 const Wrapper = styled.div`
     display : flex;
@@ -55,9 +56,9 @@ export default function Home(){
     return (
         <Wrapper>
             <Container>
-                <CardCont>
+                {loading ? <Loading/> : <CardCont>
                     {data && data.map(e => <Card key={e.id.toString()} data={e}></Card>)}
-                </CardCont>
+                </CardCont>}
             </Container>
         </Wrapper>  
     )
