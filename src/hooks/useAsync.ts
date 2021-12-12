@@ -14,11 +14,12 @@ export default function useAsync(callback : () => Promise<any>, dependencies = [
     .catch(setError)
     setValue(val)
     setLoading(false)
-
+    // eslint-disable-next-line
   }, dependencies)
 
   useEffect(() => {
     callbackMemoized()
+    // eslint-disable-next-line
   }, [callbackMemoized])
 
   return { loading, error, value }

@@ -31,7 +31,7 @@ const CardCont = styled.div`
 
 export default function Home(){
     const [data,setData] = useState<API[] | undefined>()
-    const { loading, error, value } = useFetch(
+    const { loading, value } = useFetch(
         `https://getgreenspark.mocklab.io/products`,
         {},
         []
@@ -51,6 +51,7 @@ export default function Home(){
             })
             setData(valueReal)
         }
+        // eslint-disable-next-line
     },[value])
 
     return (
