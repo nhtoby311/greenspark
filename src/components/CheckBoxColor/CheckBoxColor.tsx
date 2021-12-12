@@ -41,7 +41,7 @@ const InputBox = styled.input<Props>`
         left: 0;
         width: 100%;
         height: 100%;
-        background: #ffffff83;
+        background: #ffffff48;
         opacity: 0;
         transition: opacity 0.2s;
     }

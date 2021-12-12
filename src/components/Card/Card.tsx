@@ -70,7 +70,7 @@ type PropsTitleBar = {
 }
 
 export default function Card(props : Props){
-    console.log(props.data)
+    //console.log(props.data)
     const carbonCaseTxt = props.data?.type === "carbon" ? "kgs of " : ""
     return (
         <Box>

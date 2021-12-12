@@ -11,6 +11,10 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    @media screen and (max-width: 937px){
+        align-items:flex-start;
+        margin-top: 48px;
+    }
 `
 
 const CardCont = styled.div`
@@ -18,6 +22,9 @@ const CardCont = styled.div`
     grid-template-columns: 1fr 1fr 1fr; 
     margin-top : 25px; 
     gap: 50px;
+    @media screen and (max-width: 937px){
+        grid-template-columns: 1fr
+    }
 `
 
 
