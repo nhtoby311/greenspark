@@ -4,6 +4,7 @@ import CheckBoxColor from "../CheckBoxColor/CheckBoxColor"
 import CheckBoxSwitch from "../CheckBoxSwitch/CheckBoxSwitch"
 import Logo from "../Logo/Logo"
 import { API } from "../../types/API"
+import Tooltips from "../Tooltips/Tooltips"
 
 const Box = styled.div`
     display: flex;
@@ -83,7 +84,10 @@ export default function Card(props : Props){
             
             <ContTools>
                 <ToolsRow>
-                    <ToolsText>Link to Public Profile</ToolsText>
+                    <div style={{display:'flex',gap:"2px"}}>
+                        <ToolsText>Link to Public Profile</ToolsText>
+                        <Tooltips/>
+                    </div>
                     <Tools>
                         <CheckBox></CheckBox>
                     </Tools>

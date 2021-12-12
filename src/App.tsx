@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './pages/Home';
 import styled from 'styled-components';
 import GlobalStyle from './styles/style';
+import { Routes, Route, Link } from "react-router-dom";
 
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-      <Home/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<>404</>} />
+      </Routes>
     </>
   );
 }
