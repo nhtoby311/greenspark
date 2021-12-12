@@ -24,10 +24,10 @@ const InputBox = styled.input<Props>`
     margin: 0;
     cursor: pointer;
     background: var(--b, var(--background));
-    transition: background .3s, border-color .3s, box-shadow .2s;
+    transition: background .3s, border-color .3s, box-shadow .2s, transform 0.2s;
 
     &:checked {
-      transform: scale(0.7)
+      transform: scale(0.7);
     }
 
 
