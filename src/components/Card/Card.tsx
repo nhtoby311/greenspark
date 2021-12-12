@@ -19,6 +19,7 @@ const TileBar = styled.div<PropsTileBar>`
     border-radius: 5.95489px;
     padding: 15px 15px;
     gap: 20px;
+    transition: background 0.3s;
 `
 
 const TextBar = styled.div<PropsTitleBar>`
@@ -26,6 +27,7 @@ const TextBar = styled.div<PropsTitleBar>`
     flex-direction: column;
     gap: 5px;
     color: ${(props) => props.textColor === null ? "#F9F9F9" : props.textColor};
+    transition: color 0.3s;
 `
 
 const FixedText = styled.p`

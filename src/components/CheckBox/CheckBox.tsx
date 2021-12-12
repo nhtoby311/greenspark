@@ -65,14 +65,14 @@ const HoverShadow = styled.div`
         top: -6px;
         border-radius: 50%;
         opacity: 0;
-        transition: opacity .3s;
+        transition: opacity .5s;
 `
 
 export default function CheckBox(){
     return (
         <Cont >
             <HoverShadow></HoverShadow>
-            <InputBox type="checkbox"></InputBox>
+            <InputBox  type="checkbox"></InputBox>
         </Cont>
     )
 }
