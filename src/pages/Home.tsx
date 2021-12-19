@@ -5,6 +5,7 @@ import Container from "../components/Container/Container"
 import Card from "../components/Card/Card"
 import { API } from "../types/API"
 import Loading from "../components/Loading/Loading"
+import dataMock from '../data/mock_data.json'
 
 const Wrapper = styled.div`
     display : flex;
@@ -32,10 +33,12 @@ const CardCont = styled.div`
 export default function Home(){
     const [data,setData] = useState<API[] | undefined>()
     const { loading, value } = useFetch(
-        `https://getgreenspark.mocklab.io/products`,
+        dataMock,                                                   //Remove and uncomment if want to fetch from API
+        //`https://getgreenspark.mocklab.io/products`,
         {},
         []
       )
+
 
     const colorsBanner = ['#2E3A8C','#3B755F','#F2EBDB']
     const colorsText = [null,null,'#3B755F']
