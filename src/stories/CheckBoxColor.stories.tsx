@@ -9,10 +9,10 @@ const meta: Meta<typeof CheckBoxColor> = {
 export default meta;
 type Story = StoryObj<typeof CheckBoxColor>;
 
-export const Primary: Story = {
+export const Default: Story = {
 	// render: () => <CheckBoxColor  />,
 	args: {
-		active: true,
+		checked: true,
 		bgcolor: '#3B755F',
 	},
 

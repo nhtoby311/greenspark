@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import styled from 'styled-components';
 import TooltipsWindow from './TooltipsWindow/TooltipsWindow';
 

@@ -30,12 +30,6 @@ const Text = styled.p`
 	text-align: center;
 `;
 
-const CusLink = styled(Link)`
-	color: #3b755f;
-	text-decoration: none;
-	font-weight: 600;
-`;
-
 export default function TooltipsWindow() {
 	return (
 		<Cont>

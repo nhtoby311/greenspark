@@ -59,26 +59,28 @@ const ShadowBox = styled.div`
 	top: 0;
 	position: absolute;
 	background: #d1c2c2;
+	pointer-events: none;
 `;
 
 type Props = {
 	bgcolor: string;
-	onClick?: () => void;
-	active?: boolean;
+	onClickCB?: () => void;
+	checked?: boolean;
 };
 
 export default function CheckBoxColor(props: Props) {
 	//console.log(props.active)
-	const checkedVal = props.active ? true : false;
+	//const checkedVal = props.active ? true : false;
 	return (
-		<Cont onClick={props.onClick}>
-			<ShadowBox></ShadowBox>
+		<Cont>
+			<ShadowBox />
 			<InputBox
-				onChange={() => {}}
-				checked={checkedVal}
+				onChange={props.onClickCB}
+				checked={props.checked}
 				className='input-checkbox-color'
 				bgcolor={props.bgcolor}
-				type='checkbox'></InputBox>
+				type='checkbox'
+			/>
 		</Cont>
 	);
 }

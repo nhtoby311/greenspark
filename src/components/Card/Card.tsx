@@ -7,7 +7,7 @@ import { API } from '../../types/API';
 import Tooltips from '../Tooltips/Tooltips';
 import { useState } from 'react';
 
-const Box = styled.div`
+const Box = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -101,7 +101,8 @@ export default function Card(props: Props) {
 				<TextBar textcolor={badgeTxtColor}>
 					<FixedText>This product collects</FixedText>
 					<NumText>
-						{props.data?.amount} {carbonCaseTxt} {props.data?.type}
+						{props.data?.amount + ''} {carbonCaseTxt}{' '}
+						{props.data?.type}
 					</NumText>
 				</TextBar>
 			</TileBar>
@@ -121,8 +122,8 @@ export default function Card(props: Props) {
 					<Tools>
 						{badgeBgColorArr.map((e, ind) => (
 							<CheckBoxColor
-								active={e === badgeBgColor ? true : false}
-								onClick={() => {
+								checked={e === badgeBgColor ? true : false}
+								onClickCB={() => {
 									BadgeColorOnClickHandle(e, ind);
 								}}
 								key={ind.toString()}

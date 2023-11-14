@@ -14,7 +14,7 @@ const InputBox = styled.input`
 	--disabled-inner: #e1e6f9;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	height: 19px;
+	height: 20px;
 	width: 38px;
 	border-radius: 11px;
 	outline: none;
@@ -22,7 +22,7 @@ const InputBox = styled.input`
 	margin: 0;
 	cursor: pointer;
 	background: var(--b, var(--background));
-	border: 0.683608px solid #afc6bd;
+	border: 1px solid #afc6bd;
 	box-shadow: inset 0px 1.02541px 6.83608px rgba(0, 0, 0, 0.15);
 	transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
 
@@ -30,25 +30,26 @@ const InputBox = styled.input`
 		content: '';
 		display: block;
 		position: absolute;
-		width: 4px;
-		height: 8px;
-		border-top: 0;
-		border-left: 0;
-		left: 5px;
-		top: 2px;
-		transform: rotate(45deg);
-		z-index: 5;
-		transition: transform 0.6s, opacity 0.2s;
+
+		left: 0;
+		top: 0;
+		border-radius: 50%;
+		width: 17px;
+		height: 17px;
+		border: 1px solid #afc6bd;
+		background: var(--ab, #f9f9f9);
+		transform: translateX(var(--x, 0));
+		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	}
 
 	&:checked {
 		--b: var(--active);
 		--bc: var(--active);
 		--ab: var(--active-inner);
-		--x: 17px;
+		--x: 100%;
 	}
 
-	&:before {
+	/* &:before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -65,18 +66,7 @@ const InputBox = styled.input`
 
 	&:hover:before {
 		opacity: 0.5;
-	}
-
-	&:after {
-		left: 0px;
-		top: -1px;
-		border-radius: 50%;
-		width: 17px;
-		height: 17px;
-		border: 0.683608px solid #afc6bd;
-		background: var(--ab, #f9f9f9);
-		transform: translateX(var(--x, 0));
-	}
+	} */
 
 	&:disabled {
 		&:not(:checked) {
@@ -87,10 +77,28 @@ const InputBox = styled.input`
 	}
 `;
 
-export default function CheckBoxSwitch() {
+type Props = {
+	id?: string;
+	name?: string;
+	checked?: boolean;
+	onChangeCB?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function CheckBoxSwitch({
+	id,
+	name,
+	checked,
+	onChangeCB,
+}: Props) {
 	return (
 		<Cont>
-			<InputBox type='checkbox'></InputBox>
+			<InputBox
+				id={id}
+				name={name}
+				checked={checked}
+				onChange={onChangeCB}
+				type='checkbox'
+			/>
 		</Cont>
 	);
 }

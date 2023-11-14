@@ -9,6 +9,6 @@ const meta: Meta<typeof Tooltips> = {
 export default meta;
 type Story = StoryObj<typeof Tooltips>;
 
-export const Primary: Story = {
+export const Default: Story = {
 	args: {},
 };
