@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CheckBoxColor from '../components/CheckBoxColor/CheckBoxColor';
+import CheckBoxColor from '../components/common/CheckBoxColor/CheckBoxColor';
 
 const meta: Meta<typeof CheckBoxColor> = {
 	component: CheckBoxColor,

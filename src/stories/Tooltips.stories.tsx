@@ -11,4 +11,15 @@ type Story = StoryObj<typeof Tooltips>;
 
 export const Default: Story = {
 	args: {},
+
+	render: () => (
+		<div
+			style={{
+				display: 'flex',
+				width: '100%',
+				justifyContent: 'center',
+			}}>
+			<Tooltips />
+		</div>
+	),
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import CheckBox from '../CheckBox/CheckBox';
-import CheckBoxColor from '../CheckBoxColor/CheckBoxColor';
-import CheckBoxSwitch from '../CheckBoxSwitch/CheckBoxSwitch';
+import CheckBox from '../common/CheckBox/CheckBox';
+import CheckBoxColor from '../common/CheckBoxColor/CheckBoxColor';
+import CheckBoxSwitch from '../common/CheckBoxSwitch/CheckBoxSwitch';
 import Logo from '../Logo/Logo';
 import { API } from '../../types/API';
 import Tooltips from '../Tooltips/Tooltips';

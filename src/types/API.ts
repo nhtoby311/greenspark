@@ -1,7 +1,7 @@
 export type API = {
-	id: Number;
+	id: number;
 	type: string;
-	amount: Number;
+	amount: number;
 	background?: string;
 	textcolor?: string | null;
 };
