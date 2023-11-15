@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 
+import InfoIcon from '../../SVG/InfoIcon';
+import React from 'react';
+
 const Cont = styled.div`
+	position: relative;
+	&:hover > div {
+		opacity: 1;
+		pointer-events: auto;
+	}
+`;
+
+const Window = styled.div`
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -21,23 +32,23 @@ const Cont = styled.div`
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.2s;
+
+	p {
+		font-size: 14px;
+		color: #212121;
+		text-align: center;
+	}
 `;
 
-const Text = styled.p`
-	font-size: 14px;
-	color: #212121;
-	text-align: center;
-`;
+type Props = {
+	children: React.ReactNode;
+};
 
-export default function TooltipsWindow() {
+export default function Tooltips({ children }: Props) {
 	return (
 		<Cont>
-			<Text>
-				This widget links directly to your public profile so that you
-				can easily share your impact with your customers. Turn it off
-				here if you do not want the badge to link to it.
-			</Text>
-			<p>View Public Profile</p>
+			<InfoIcon />
+			<Window>{children}</Window>
 		</Cont>
 	);
 }

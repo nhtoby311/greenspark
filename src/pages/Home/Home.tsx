@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import styled from 'styled-components';
-import Container from '../components/Container/Container';
-import Card from '../components/Card/Card';
-import { API } from '../types/API';
-import Loading from '../components/Loading/Loading';
-import dataMock from '../data/mock_data.json';
+import Container from './Container/Container';
+import Card from './Card/Card';
+import { API } from '../../types/API';
+import Loading from './Loading/Loading';
+import dataMock from '../../data/mock_data.json';
 
 const Wrapper = styled.div`
 	display: flex;

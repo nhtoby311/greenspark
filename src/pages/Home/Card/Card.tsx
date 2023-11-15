@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import CheckBox from '../common/CheckBox/CheckBox';
-import CheckBoxColor from '../common/CheckBoxColor/CheckBoxColor';
-import CheckBoxSwitch from '../common/CheckBoxSwitch/CheckBoxSwitch';
+import CheckBox from '../../../components/common/CheckBox/CheckBox';
+import CheckBoxColor from '../../../components/common/CheckBoxColor/CheckBoxColor';
+import CheckBoxSwitch from '../../../components/common/CheckBoxSwitch/CheckBoxSwitch';
 import Logo from '../Logo/Logo';
-import { API } from '../../types/API';
-import Tooltips from '../Tooltips/Tooltips';
+import { API } from '../../../types/API';
+import Tooltips from '../../../components/common/Tooltips/Tooltips';
 import { useState } from 'react';
 
 const Box = styled.form`
@@ -111,7 +111,15 @@ export default function Card(props: Props) {
 				<ToolsRow>
 					<div style={{ display: 'flex', gap: '2px' }}>
 						<ToolsText>Link to Public Profile</ToolsText>
-						<Tooltips />
+						<Tooltips>
+							<p>
+								This widget links directly to your public
+								profile so that you can easily share your impact
+								with your customers. Turn it off here if you do
+								not want the badge to link to it.
+							</p>
+							<a href='/'>View Public Profile</a>
+						</Tooltips>
 					</div>
 					<Tools>
 						<CheckBox></CheckBox>
