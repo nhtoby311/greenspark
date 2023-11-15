@@ -6,7 +6,7 @@ import Card from './Card/Card';
 import { API } from '../../types/API';
 import Loading from './Loading/Loading';
 import dataMock from '../../data/mock_data.json';
-import { cubicBezier, motion, useAnimate, stagger } from 'framer-motion';
+import { motion, useAnimate, stagger } from 'framer-motion';
 
 export default function Home() {
 	const [scope, animate] = useAnimate();
