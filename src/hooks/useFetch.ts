@@ -13,7 +13,7 @@ export default function useFetch(
 		/*const req = await fetch(url, { ...DEFAULT_OPTIONS, ...options })        //Uncomment if want to fetch from API
       const res = await req.json()
       if (!req.ok) throw new Error(" "+ req.status) */
-		console.log(options);
+		//console.log(options);
 
 		return url;
 	}, dependencies);
