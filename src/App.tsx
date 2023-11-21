@@ -1,20 +1,19 @@
-import React from 'react';
-import Home from './pages/Home';
-import GlobalStyle from './styles/style';
-import { Routes, Route} from "react-router-dom";
+import Home from './pages/Home/Home';
+
+import './styles/style.css';
 
 function App() {
-  
-  return (
-    <>
-      <GlobalStyle/>
-        <Routes>
+	return (
+		<>
+			{/* <GlobalStyle /> */}
+			{/* <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<>404</>} />
-        </Routes>
-      
-    </>
-  );
+        </Routes> */}
+
+			<Home />
+		</>
+	);
 }
 
 export default App;
